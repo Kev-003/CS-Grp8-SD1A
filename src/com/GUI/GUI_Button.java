@@ -15,6 +15,7 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import com.GUI.Fonts.FontManager;
 
 public class GUI_Button extends JButton {
 
@@ -39,5 +40,31 @@ public class GUI_Button extends JButton {
     public Color btnIndicatorColor = Color.white;
     public boolean btnAllowTab = false;
     
+    public void loadFonts() {
+        String[] fontPaths = {
+            "LogoType.otf",
+            "QuinoaBlack.otf",
+            "QuinoaBlackItalics.otf",
+            "QuinoaBold.otf",
+            "QuinoaBoldItalics.otf",
+            "QuinoaHeavy.otf",
+            "QuinoaHeavyItalics.otf",
+            "QuinoaLight.otf",
+            "QuinoaLightItalics.otf",
+            "QuinoaMedium.otf",
+            "QuinoaMediumItalics.otf",
+            "QuinoaRegular.otf",
+            "QuinoaRegularItalics.otf",
+            "QuinoaSemibold.otf",
+            "QuinoaSemiboldItalics.otf",
+            "QuinoaThin.otf",
+            "QuinoaThinItalics.otf",
+            "QuinoaUltrabold.otf",
+            "QuinoaUltraboldItalics.otf"
+        };
+        
+        FontManager.loadFont(fontPaths, 15f);
+        
+    }
     
 }
