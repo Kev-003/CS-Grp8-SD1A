@@ -22,10 +22,9 @@ public class GUI_Button extends JButton {
     public Color btnBackGroundColor = Color.magenta;
     public Color btnStartColor = new Color(51, 57, 140);
     public Color btnEndColor = Color.GREEN;
-    public Color btnHoverStartColor = new Color(255, 0, 255);
-    public Color btnHoverEndColor = Color.green;
-    public Color btnHoverColor = Color.white;
+    public Color btnHoverColor = new Color(242,242,242);
     public Color btnHoverForeGround = Color.magenta;
+    public Color btnHoverOutline = new Color(7,7,7);
     public boolean btnAllowGradient = true;
     public int btnBorderRadius = 10;
     private boolean mouseExited = false;
@@ -40,9 +39,11 @@ public class GUI_Button extends JButton {
     public Color btnIndicatorColor = Color.white;
     public boolean btnAllowTab = false;
     
-    public void loadFonts() {
+    
+    
+    private void loadFonts() {
         String[] fontPaths = {
-            "LogoType.otf",
+            "QuinoaUltrabold_2.otf",
             "QuinoaBlack.otf",
             "QuinoaBlackItalics.otf",
             "QuinoaBold.otf",
@@ -66,5 +67,7 @@ public class GUI_Button extends JButton {
         FontManager.loadFont(fontPaths, 15f);
         
     }
+    
+    
     
 }

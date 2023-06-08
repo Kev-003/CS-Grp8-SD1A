@@ -9,6 +9,8 @@ import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javaapplication33.LoginForm;
+
 public class Splash_Screen extends JWindow {
 
     private final JPanel contentPane;
@@ -52,6 +54,7 @@ public class Splash_Screen extends JWindow {
             public void run() {
                 java.awt.EventQueue.invokeLater(() -> {
                     dispose();
+                    LoginForm.main(new String[0]);
                 });
             }
         }, 4000);

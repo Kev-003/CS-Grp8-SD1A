@@ -7,7 +7,7 @@ public class JavaApplication33 {
     public static void main(String[] args) {
 
             Splash_Screen.main(args);
-
+            
     }
     
 }
