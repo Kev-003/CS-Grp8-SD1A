@@ -41,31 +41,11 @@ public class GUI_Button extends JButton {
     
     
     
-    private void loadFonts() {
-        String[] fontPaths = {
-            "QuinoaUltrabold_2.otf",
-            "QuinoaBlack.otf",
-            "QuinoaBlackItalics.otf",
-            "QuinoaBold.otf",
-            "QuinoaBoldItalics.otf",
-            "QuinoaHeavy.otf",
-            "QuinoaHeavyItalics.otf",
-            "QuinoaLight.otf",
-            "QuinoaLightItalics.otf",
-            "QuinoaMedium.otf",
-            "QuinoaMediumItalics.otf",
-            "QuinoaRegular.otf",
-            "QuinoaRegularItalics.otf",
-            "QuinoaSemibold.otf",
-            "QuinoaSemiboldItalics.otf",
-            "QuinoaThin.otf",
-            "QuinoaThinItalics.otf",
-            "QuinoaUltrabold.otf",
-            "QuinoaUltraboldItalics.otf"
-        };
-        
-        FontManager.loadFont(fontPaths, 15f);
-        
+    public Font loadFonts(int i) {
+        FontManager fontManager = new FontManager();
+
+        // Set the desired font for lblTitle
+        return fontManager.registerFonts(i);
     }
     
     

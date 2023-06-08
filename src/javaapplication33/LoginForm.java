@@ -9,24 +9,19 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import com.GUI.GUI_TextField;
 
-/**
- *
- * @author User's
- */
-public class LoginForm extends javax.swing.JFrame {
-    
-    Font fontTitle;
-    
+public final class LoginForm extends javax.swing.JFrame {
+
     /**
      * Creates new form LoginForm
+     *
      * @throws java.awt.FontFormatException
      * @throws java.io.IOException
      */
     public LoginForm() throws FontFormatException, IOException {
-        this.fontTitle = Font.createFont(Font.BOLD, new File(loadFonts(3)));
-        
         initComponents();
+
     }
 
     /**
@@ -49,10 +44,10 @@ public class LoginForm extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(fontTitle);
+        lblTitle.setFont(new Font(loadFonts(0).getFontName(),Font.BOLD,45));
         lblTitle.setForeground(new java.awt.Color(242, 242, 242));
         lblTitle.setText("ShadiFinTech");
-        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 500, 50));
+        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 500, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/WhiteLogo.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
@@ -97,38 +92,16 @@ public class LoginForm extends javax.swing.JFrame {
         });
     }
 
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
 
-    private String loadFonts(int i) {
-        String[] fontPaths = {
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaUltrabold_2.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaBlack.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaBlackItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaBold.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaBoldItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaHeavy.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaHeavyItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaLight.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaLightItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaMedium.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaMediumItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaRegular.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaRegularItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaSemibold.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaSemiboldItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaThin.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaThinItalics.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaUltrabold.otf",
-            "C:\\Users\\User's\\Documents\\NetBeansProjects\\JavaApplication33\\src\\com\\GUI\\Fonts\\QuinoaUltraboldItalics.otf"
-        };
-        
-        FontManager.loadFont(fontPaths, 15f);
-        
-        return fontPaths [i];
+    public Font loadFonts(int i) {
+        FontManager fontManager = new FontManager();
+
+        // Set the desired font for lblTitle
+        return fontManager.registerFonts(i);
     }
 }
