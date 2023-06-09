@@ -39,6 +39,10 @@ public final class LoginForm extends javax.swing.JFrame {
         pnlLoginFields = new javax.swing.JPanel();
         picColorIcon = new javax.swing.JLabel();
         lblLogin = new javax.swing.JLabel();
+        txtNum = new javax.swing.JTextField();
+        lblNum = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         kBtnLoginPrompt = new com.k33ptoo.components.KButton();
         lblTagline2 = new javax.swing.JLabel();
@@ -68,6 +72,28 @@ public final class LoginForm extends javax.swing.JFrame {
         lblLogin.setForeground(new java.awt.Color(16, 20, 20));
         lblLogin.setText("Login");
         pnlLoginFields.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 280, 90));
+
+        txtNum.setBackground(new Color(0,0,0,0));
+        txtNum.setFont(new Font(loadFonts(9).getFontName(),Font.TRUETYPE_FONT,18));
+        txtNum.setForeground(new java.awt.Color(16, 20, 20));
+        txtNum.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(153,153,153)));
+        pnlLoginFields.add(txtNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 360, 40));
+
+        lblNum.setFont(new Font(loadFonts(7).getFontName(),Font.TRUETYPE_FONT,16));
+        lblNum.setForeground(new java.awt.Color(153, 153, 153));
+        lblNum.setText("Account Number");
+        pnlLoginFields.add(lblNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+
+        lblName.setFont(new Font(loadFonts(7).getFontName(),Font.TRUETYPE_FONT,16));
+        lblName.setForeground(new java.awt.Color(153, 153, 153));
+        lblName.setText("Name");
+        pnlLoginFields.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+
+        txtName.setBackground(new Color(0,0,0,0));
+        txtName.setFont(new Font(loadFonts(9).getFontName(),Font.TRUETYPE_FONT,18));
+        txtName.setForeground(new java.awt.Color(16, 20, 20));
+        txtName.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(153,153,153)));
+        pnlLoginFields.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 360, 40));
 
         getContentPane().add(pnlLoginFields, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 720));
 
@@ -161,6 +187,8 @@ public final class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private com.k33ptoo.components.KButton kBtnLoginPrompt;
     private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblNum;
     private javax.swing.JLabel lblTagline1;
     private javax.swing.JLabel lblTagline2;
     private javax.swing.JLabel lblTitle;
@@ -168,6 +196,8 @@ public final class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel picColorIcon;
     private javax.swing.JLabel picFeaturesBG;
     private javax.swing.JPanel pnlLoginFields;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtNum;
     // End of variables declaration//GEN-END:variables
 
     public Font loadFonts(int i) {

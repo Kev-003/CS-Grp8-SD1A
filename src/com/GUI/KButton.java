@@ -37,10 +37,10 @@ public class KButton extends JButton {
     public Color kHoverForeGround = Color.magenta;
     public boolean kAllowGradient = true;
     public int kBorderRadius = 10;
-    private boolean mouseExited = false;
-    private boolean mouseEntered = false;
-    private boolean mousePressed = false;
-    private boolean mouseReleased = false;
+    public boolean mouseExited = false;
+    public boolean mouseEntered = false;
+    public boolean mousePressed = false;
+    public boolean mouseReleased = false;
     public boolean kFillButton = true;
     public Color kForeGround = Color.white;
     public Color kSelectedColor = Color.magenta;

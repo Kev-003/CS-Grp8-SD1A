@@ -37,10 +37,10 @@ public class KButton extends JButton {
     public Color kHoverForeGround = Color.magenta;
     public boolean kAllowGradient = true;
     public int kBorderRadius = 10;
-    private boolean mouseExited = false;
-    private boolean mouseEntered = false;
-    private boolean mousePressed = false;
-    private boolean mouseReleased = false;
+    public boolean mouseExited = false;
+    public boolean mouseEntered = false;
+    public boolean mousePressed = false;
+    public boolean mouseReleased = false;
     public boolean kFillButton = true;
     public Color kForeGround = Color.white;
     public Color kSelectedColor = Color.magenta;
@@ -49,24 +49,6 @@ public class KButton extends JButton {
     public Color kIndicatorColor = Color.white;
     public boolean kAllowTab = false;
     
-    private Color kBorderColor = new Color (0,0,0,0);
-    private Color kBorderHoverColor = new Color(242,242,242);
-    
-    public Color getkBorderColor() {
-    return kBorderColor;
-}
-
-public void setkBorderColor(Color kBorderColor) {
-    this.kBorderColor = kBorderColor;
-}
-
-public Color getkBorderHoverColor() {
-    return kBorderHoverColor;
-}
-
-public void setkBorderHoverColor(Color kBorderHoverColor) {
-    this.kBorderHoverColor = kBorderHoverColor;
-}
 
     public boolean iskAllowTab() {
         return kAllowTab;
@@ -269,12 +251,12 @@ public void setkBorderHoverColor(Color kBorderHoverColor) {
                     gp = new GradientPaint(0, 0, kHoverStartColor, 300, getHeight(), kHoverEndColor);
                     g2.setPaint(gp);
                     setForeground(kHoverForeGround);
-                    setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, kBorderHoverColor));
+                    
                 } else if (mouseExited) {
                     gp = new GradientPaint(0, 0, kStartColor, 300, getHeight(), kEndColor);
                     g2.setPaint(gp);
                     setForeground(kForeGround);
-                    setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, kBorderColor));
+                    
                 }
 
             } else {
@@ -283,12 +265,11 @@ public void setkBorderHoverColor(Color kBorderHoverColor) {
                     g2.setPaint(kHoverColor);
                     g2.fillRoundRect(0, 0, getWidth(), getHeight(), kBorderRadius, kBorderRadius);
                     setForeground(kHoverForeGround);
-                    setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, kBorderHoverColor));
+                    
                 } else if (mouseExited) {
                     g2.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, kBorderRadius, kBorderRadius);
                     g2.setPaint(kBackGroundColor);
                     setForeground(kForeGround);
-                    setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, kBorderColor));
 
                 } else {
                     g2.setPaint(kBackGroundColor);
