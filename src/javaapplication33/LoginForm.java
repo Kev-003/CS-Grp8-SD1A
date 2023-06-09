@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import com.GUI.GUI_TextField;
+import com.k33ptoo.components.KButton;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 
 public final class LoginForm extends javax.swing.JFrame {
 
@@ -33,9 +35,16 @@ public final class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        picFeaturesBG = new javax.swing.JLabel();
+        pnlLoginFields = new javax.swing.JPanel();
+        picColorIcon = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        kBtnLoginPrompt = new com.k33ptoo.components.KButton();
+        lblTagline2 = new javax.swing.JLabel();
+        lblTagline1 = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        picBG = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ShadiFinTech Banking System");
@@ -44,19 +53,75 @@ public final class LoginForm extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new Font(loadFonts(0).getFontName(),Font.BOLD,45));
+        picFeaturesBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/FeaturesBG.png"))); // NOI18N
+        picFeaturesBG.setVisible(false);
+        getContentPane().add(picFeaturesBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, -1, -1));
+
+        pnlLoginFields.setBackground(new java.awt.Color(242, 242, 242));
+        pnlLoginFields.setVisible(false);
+        pnlLoginFields.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        picColorIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/ColorLogo.png"))); // NOI18N
+        pnlLoginFields.add(picColorIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+
+        lblLogin.setFont(new Font(loadFonts(0).getFontName(),Font.BOLD,55));
+        lblLogin.setForeground(new java.awt.Color(16, 20, 20));
+        lblLogin.setText("Login");
+        pnlLoginFields.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 280, 90));
+
+        getContentPane().add(pnlLoginFields, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 720));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/WhiteLogo.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
+
+        kBtnLoginPrompt.setBorder(null);
+        kBtnLoginPrompt.setForeground(new java.awt.Color(51, 57, 140));
+        kBtnLoginPrompt.setText("Log In");
+        kBtnLoginPrompt.setFont(new Font(loadFonts(9).getFontName(),Font.BOLD,30));
+        kBtnLoginPrompt.setkBackGroundColor(new java.awt.Color(242, 242, 242));
+        kBtnLoginPrompt.setkEndColor(new java.awt.Color(242, 242, 242));
+        kBtnLoginPrompt.setkForeGround(new java.awt.Color(51, 57, 140));
+        kBtnLoginPrompt.setkHoverEndColor(new java.awt.Color(51, 57, 140));
+        kBtnLoginPrompt.setkHoverForeGround(new java.awt.Color(242, 242, 242));
+        kBtnLoginPrompt.setkHoverStartColor(new java.awt.Color(0, 0, 51));
+        kBtnLoginPrompt.setkStartColor(new java.awt.Color(255, 255, 255));
+        kBtnLoginPrompt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kBtnLoginPromptActionPerformed(evt);
+            }
+        });
+        getContentPane().add(kBtnLoginPrompt, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 485, 190, 60));
+
+        lblTagline2.setFont(new Font(loadFonts(0).getFontName(),Font.BOLD,75));
+        lblTagline2.setForeground(new java.awt.Color(242, 242, 242));
+        lblTagline2.setText("Seamless Experience.");
+        getContentPane().add(lblTagline2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 820, 80));
+
+        lblTagline1.setFont(new Font(loadFonts(0).getFontName(),Font.BOLD,75));
+        lblTagline1.setForeground(new java.awt.Color(242, 242, 242));
+        lblTagline1.setText("Secure Banking,");
+        getContentPane().add(lblTagline1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 850, 90));
+
+        lblTitle.setFont(new Font(loadFonts(0).getFontName(),Font.BOLD,25));
         lblTitle.setForeground(new java.awt.Color(242, 242, 242));
         lblTitle.setText("ShadiFinTech");
-        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 500, 40));
+        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 510, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/WhiteLogo.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/LoginBG.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        picBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Background.png"))); // NOI18N
+        getContentPane().add(picBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void kBtnLoginPromptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kBtnLoginPromptActionPerformed
+        lblTagline1.setVisible(false);
+        lblTagline2.setVisible(false);
+        
+        picBG.setVisible(false);
+        picFeaturesBG.setVisible(true);
+        pnlLoginFields.setVisible(true);
+        
+    }//GEN-LAST:event_kBtnLoginPromptActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -93,9 +158,16 @@ public final class LoginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private com.k33ptoo.components.KButton kBtnLoginPrompt;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblTagline1;
+    private javax.swing.JLabel lblTagline2;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel picBG;
+    private javax.swing.JLabel picColorIcon;
+    private javax.swing.JLabel picFeaturesBG;
+    private javax.swing.JPanel pnlLoginFields;
     // End of variables declaration//GEN-END:variables
 
     public Font loadFonts(int i) {
