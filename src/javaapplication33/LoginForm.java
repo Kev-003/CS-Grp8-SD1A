@@ -12,9 +12,13 @@ import javax.swing.ImageIcon;
 import com.k33ptoo.components.KButton;
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+import org.netbeans.lib.awtextra.AbsoluteConstraints;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 public final class LoginForm extends javax.swing.JFrame {
-
+    
+    MainFeatures pnlFeatures = new MainFeatures();
     /**
      * Creates new form LoginForm
      *
@@ -22,8 +26,10 @@ public final class LoginForm extends javax.swing.JFrame {
      * @throws java.io.IOException
      */
     public LoginForm() throws FontFormatException, IOException {
+        
+        
         initComponents();
-
+        
     }
 
     /**
@@ -43,6 +49,9 @@ public final class LoginForm extends javax.swing.JFrame {
         lblNum = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        lblPass = new javax.swing.JLabel();
+        txtPass = new javax.swing.JPasswordField();
+        kButton1 = new com.k33ptoo.components.KButton();
         jLabel3 = new javax.swing.JLabel();
         kBtnLoginPrompt = new com.k33ptoo.components.KButton();
         lblTagline2 = new javax.swing.JLabel();
@@ -79,12 +88,12 @@ public final class LoginForm extends javax.swing.JFrame {
         txtNum.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(153,153,153)));
         pnlLoginFields.add(txtNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 360, 40));
 
-        lblNum.setFont(new Font(loadFonts(7).getFontName(),Font.TRUETYPE_FONT,16));
+        lblNum.setFont(new Font(loadFonts(7).getFontName(),Font.PLAIN,16));
         lblNum.setForeground(new java.awt.Color(153, 153, 153));
         lblNum.setText("Account Number");
         pnlLoginFields.add(lblNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
 
-        lblName.setFont(new Font(loadFonts(7).getFontName(),Font.TRUETYPE_FONT,16));
+        lblName.setFont(new Font(loadFonts(7).getFontName(),Font.PLAIN,16));
         lblName.setForeground(new java.awt.Color(153, 153, 153));
         lblName.setText("Name");
         pnlLoginFields.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
@@ -94,6 +103,29 @@ public final class LoginForm extends javax.swing.JFrame {
         txtName.setForeground(new java.awt.Color(16, 20, 20));
         txtName.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(153,153,153)));
         pnlLoginFields.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 360, 40));
+
+        lblPass.setFont(new Font(loadFonts(7).getFontName(),Font.PLAIN,16));
+        lblPass.setForeground(new java.awt.Color(153, 153, 153));
+        lblPass.setText("Password");
+        pnlLoginFields.add(lblPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, -1, -1));
+
+        txtPass.setBackground(new Color(0,0,0,0));
+        txtPass.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtPass.setForeground(new java.awt.Color(16, 20, 20));
+        txtPass.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(153,153,153)));
+        txtPass.setEchoChar('\u00b7');
+        pnlLoginFields.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 360, 40));
+
+        kButton1.setText("kButton1");
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
+        pnlLoginFields.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, -1, -1));
+
+        pnlFeatures.setVisible(false);
+        getContentPane().add(pnlFeatures, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 540, 720));
 
         getContentPane().add(pnlLoginFields, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 720));
 
@@ -147,14 +179,15 @@ public final class LoginForm extends javax.swing.JFrame {
         picFeaturesBG.setVisible(true);
         pnlLoginFields.setVisible(true);
         
+        pnlFeatures.setVisible(true);
     }//GEN-LAST:event_kBtnLoginPromptActionPerformed
+
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        
+    }//GEN-LAST:event_kButton1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -162,15 +195,11 @@ public final class LoginForm extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LoginForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -182,13 +211,16 @@ public final class LoginForm extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel3;
     private com.k33ptoo.components.KButton kBtnLoginPrompt;
+    private com.k33ptoo.components.KButton kButton1;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblNum;
+    private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblTagline1;
     private javax.swing.JLabel lblTagline2;
     private javax.swing.JLabel lblTitle;
@@ -198,6 +230,7 @@ public final class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPanel pnlLoginFields;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtNum;
+    private javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
 
     public Font loadFonts(int i) {
